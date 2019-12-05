@@ -1,0 +1,7 @@
+class Neuron {
+
+  constructor(input){
+
+  }
+
+}
