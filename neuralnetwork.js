@@ -58,10 +58,6 @@ class NeuralNetwork {
     this.wh2.mult(0.25);
     this.wo.randomize()
     this.wo.mult(0.277);
-
-    // this.bh1.randomize(-2,2);
-    // this.bh2.randomize(-2,2);
-    // this.bo.randomize(-2,2);
   }
 
   feedforward(){
@@ -172,42 +168,6 @@ class NeuralNetwork {
       biases: Matrix.subtract(biases, deltabiases)
     };
 
-
-    // ** SO.. DOESNT SEEM TO BE WORKING...
-    // let outputderiv = Matrix.createFromMatrix(output);
-    // outputderiv.map(this.dsigmoid);
-    //
-    // // calc delta bias
-    // let deltabiases = Matrix.subtract(output, answer);
-    // deltabiases.mult(outputderiv);
-    // deltabiases.mult(this.lr);
-    //
-    // // calc delta weights
-    // let deltaweights = Matrix.subtract(output, answer);
-    // deltaweights.mult(outputderiv);
-    // let prevnodes_t = prevnodes.transpose();
-    // deltaweights = Matrix.mult(deltaweights, prevnodes_t);
-    // deltaweights.mult(this.lr);
-    //
-    // // calc delta nodes
-    // let deltanodes = Matrix.subtract(output, answer);
-    // deltanodes.mult(outputderiv);
-    // deltanodes = Matrix.mult(weights.transpose(), deltanodes);
-    // deltanodes.mult(-1);
-    // console.log(deltanodes);
-    //
-    // // calc decreasing gradient step
-    // deltabiases.mult(-1);
-    // deltaweights.mult(-1);
-    //
-    // this.arraydeltabiases.push(deltabiases);
-    // this.arraydeltaweights.push(deltaweights);
-    //
-    // // biases.add(deltabiases);
-    // // weights.add(deltaweights);
-    //
-    // let newnodes = Matrix.createFromMatrix(prevnodes);
-    // newnodes.add(deltanodes);
 
     return newnodes;
 
